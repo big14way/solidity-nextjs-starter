@@ -47,8 +47,31 @@ If you want to learn how to interact with a simple smart contract from the clien
 - [viem](https://viem.sh/)
 - [wagmi](https://wagmi.sh/)
 - [RainbowKit](https://www.rainbowkit.com/)
+- [WalletConnect](https://walletconnect.com/) - Multi-wallet support via RainbowKit
 - [TypeScript](https://www.typescriptlang.org/)
 - [Prettier](https://prettier.io/)
+
+### WalletConnect Integration
+
+This starter now includes **WalletConnect v2** integration via RainbowKit, enabling connections to 300+ cryptocurrency wallets including:
+- MetaMask (browser extension and mobile)
+- Trust Wallet
+- Rainbow Wallet
+- Coinbase Wallet
+- Ledger Live
+- And many more!
+
+#### Features
+- **Multi-Wallet Support**: Connect with any WalletConnect-compatible wallet
+- **QR Code Modal**: Easy mobile wallet connection via QR code scanning
+- **Multi-Network Support**: Hardhat Local, Sepolia, Ethereum Mainnet, Polygon, Mumbai, Base, Base Sepolia
+- **Session Persistence**: Automatically reconnects to your last wallet
+- **Modern UI**: Built-in wallet connection UI via RainbowKit
+
+#### WalletConnect Project ID
+Project ID: `1eebe528ca0ce94a99ceaa2e915058d7`
+
+Get your own project ID at [Reown Cloud](https://cloud.reown.com/)
 
 #### App Scripts
 
@@ -94,9 +117,9 @@ Greeter with greeting "Hello, world!" deployed to 0x5FbDB2315678afecb367f032d93F
 
 Enter the `app` folder with `cd packages/app` from the root directory.
 
-You'll need a RainbowKit project ID. You can get one from [WalletConnect Cloud](https://cloud.walletconnect.com/) and it will look something like this: `206a512b7abd9c469123b45fb272b68e` (not a real key).
+You'll need a WalletConnect project ID. You can get one from [Reown Cloud](https://cloud.reown.com/) and it will look something like this: `206a512b7abd9c469123b45fb272b68e` (not a real key).
 
-Afterwards, duplicate `.env.example` and rename the file `.env`. Then add your RainbowKit project ID like this: `NEXT_PUBLIC_RAINBOWKIT_PROJECT_ID=[your-project-id]`.
+Afterwards, duplicate `.env.example` and rename the file `.env`. Then add your WalletConnect project ID like this: `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=[your-project-id]` or use the default one provided (`1eebe528ca0ce94a99ceaa2e915058d7`).
 
 `NEXT_PUBLIC_CHAIN_ID` should already be set to the Hardhat local network ID of `31337` (change this when you want your app to run on other chains).
 
@@ -185,7 +208,7 @@ Be sure to deploy from the `packages/app` directory and set these environment va
 NEXT_PUBLIC_ALCHEMY_API_KEY=[your-api-key]
 NEXT_PUBLIC_CONTRACT_ADDRESS=[your-contract-address]
 NEXT_PUBLIC_CHAIN_ID=[your-chain-id]
-NEXT_PUBLIC_RAINBOWKIT_PROJECT_ID=[your-project-id]
+NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=[your-project-id]
 ```
 
 Here's an app I deployed earlier: [https://solidity-nextjs-starter-app.vercel.app/](https://solidity-nextjs-starter-app.vercel.app/)
